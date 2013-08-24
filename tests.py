@@ -143,6 +143,7 @@ class CheckSyntax(unittest.TestCase):
         eq(movzx(eax, byte [1]), 'movzx eax, byte [0x1]',
             '\x0f\xb6\x05\x01\x00\x00\x00')
         eq(movsx(eax, al), 'movsx eax, al', '\x0f\xbe\xc0')
+        eq(int_(0x80), 'int_ 0x80', '\xcd\x80')
 
     def test_block(self):
         eq = lambda i, s, b: (self.assertEqual(repr(i), s,

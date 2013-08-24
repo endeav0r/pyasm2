@@ -1517,3 +1517,8 @@ class cdq(Instruction):
 
 class cld(Instruction):
     _opcode_ = 0xfc
+
+
+class int_ (Instruction):
+    _opcode_ = 0xcc
+    _enc_ = [('\xcd', (byte, imm))]
